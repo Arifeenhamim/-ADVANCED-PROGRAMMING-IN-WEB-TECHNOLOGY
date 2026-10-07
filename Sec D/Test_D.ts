@@ -110,3 +110,28 @@ async function main(): Promise<void> {
 }
 
 main();
+
+
+// Then and catch 
+
+// async function main(): Promise<void> {
+//     getStudentInfo();
+
+//     await getStudentInfoAsync();
+
+//     getStudentInfoWithInterface();
+
+//     console.log("Fetching student information...");
+
+//     fetchStudentInfo()
+//         .then((student) => {
+//             console.log("Student information received:");
+//             console.log(student);
+//         })
+//         .catch((error: Error) => {
+//             console.log("Error:", error.message);
+//         })
+//         .finally(() => {
+//             console.log("Student information request completed.");
+//         });
+// }
