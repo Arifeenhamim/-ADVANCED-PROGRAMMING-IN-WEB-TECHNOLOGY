@@ -1,0 +1,1 @@
+{"version":3,"file":"provider.module.js","sourceRoot":"","sources":["../../../../src/providers/queue/redis/provider.module.ts"],"names":[],"mappings":";;;;;;;;;AACA,2CAAoD;AAM7C,IAAM,kBAAkB,GAAxB,MAAM,kBAAkB;CAAG,CAAA;AAArB,gDAAkB;6BAAlB,kBAAkB;IAJ9B,IAAA,eAAM,EAAC;QACN,SAAS,EAAE,EAAE;QACb,OAAO,EAAE,EAAE;KACZ,CAAC;GACW,kBAAkB,CAAG"}
