@@ -1,0 +1,15 @@
+export declare enum Role {
+    SUPER_ADMIN = "ROLE_SUPER_ADMIN",
+    ADMIN = "ROLE_ADMIN",
+    USER = "ROLE_USER",
+    DEPARTMENT_HEAD = "ROLE_DEPARTMENT_HEAD",
+    COURSE_CONVENOR = "ROLE_COURSE_CONVENOR",
+    THESIS_ADMIN = "ROLE_THESIS_ADMIN",
+    THESIS_CONVENER = "ROLE_THESIS_CONVENER",
+    THESIS_MEMBER = "ROLE_THESIS_MEMBER",
+    THESIS_SUPERVISOR = "ROLE_USER",
+    OPERATOR = "OPERATOR"
+}
+export declare const RoleHierarchy: {
+    [key in Role]: number;
+};
