@@ -1,0 +1,30 @@
+services:
+  krown-dex-backend-service:
+    build: .
+    image: ${CONTAINER_NAME:-krown-dex-backend}-img:${GIT_COMMIT_HASH:-latest}
+    container_name: ${CONTAINER_NAME:-krown-dex-backend}
+    restart: always
+    tty: true
+
+    ports:
+      - "${RTC_PORT_MIN:-10000}-${RTC_PORT_MAX:-10100}:${RTC_PORT_MIN:-10000}-${RTC_PORT_MAX:-10100}"
+      - "${RTC_PORT_MIN:-10000}-${RTC_PORT_MAX:-10100}:${RTC_PORT_MIN:-10000}-${RTC_PORT_MAX:-10100}/udp"
+
+    networks:
+      - app-network
+
+    env_file: .env
+    environment:
+      APP_VERSION: "${GIT_COMMIT_HASH:-latest}"
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:${PORT:-5001}"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  app-network:
+    driver: bridge
+    external: true
