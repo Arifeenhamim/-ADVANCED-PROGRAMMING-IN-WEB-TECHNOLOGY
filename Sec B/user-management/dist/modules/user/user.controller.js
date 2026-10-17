@@ -27,7 +27,6 @@ let UserController = class UserController {
         return await this.userService.createUser(dto);
     }
     async updateUser(id, dto) {
-        return await this.userService.updateUser(id, dto);
     }
     async deleteUser(id) {
         return await this.userService.deleteUser(id);

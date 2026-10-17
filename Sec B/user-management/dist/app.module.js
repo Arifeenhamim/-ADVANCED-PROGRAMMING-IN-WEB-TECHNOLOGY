@@ -18,6 +18,7 @@ const app_service_1 = require("./app.service");
 const global_config_1 = __importDefault(require("./config/global_config"));
 const bull_1 = require("@nestjs/bull");
 const user_module_1 = require("./modules/user/user.module");
+const test_module_1 = require("./modules/test/test.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -37,6 +38,7 @@ exports.AppModule = AppModule = __decorate([
                 load: [global_config_1.default],
             }),
             user_module_1.UserModule,
+            test_module_1.TestModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

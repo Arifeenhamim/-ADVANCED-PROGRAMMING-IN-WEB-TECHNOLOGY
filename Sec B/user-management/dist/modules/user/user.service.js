@@ -43,11 +43,15 @@ let UserService = class UserService {
         try {
             console.log("id", id);
             if (!id) {
-                throw new common_1.NotFoundException("User with ID not found");
+                throw new common_1.NotFoundException("User not found");
             }
-            const user = await this.userRepository.findOne({ where: { id: id } });
+            const user = await this.userRepository.findOne({
+                where: {
+                    id: id,
+                },
+            });
             if (!user) {
-                throw new common_1.NotFoundException("User with ID not found");
+                throw new common_1.NotFoundException("User not found");
             }
             Object.assign(user, dto);
             const { id: uid, ...rest } = user;
@@ -59,9 +63,13 @@ let UserService = class UserService {
     }
     async deleteUser(id) {
         try {
-            const user = await this.userRepository.findOne({ where: { id: id } });
+            const user = await this.userRepository.findOne({
+                where: {
+                    id: id,
+                },
+            });
             if (!user) {
-                throw new common_1.NotFoundException("User with ID not found");
+                throw new common_1.NotFoundException("User not found");
             }
             return await this.userRepository.delete({ id: id });
         }

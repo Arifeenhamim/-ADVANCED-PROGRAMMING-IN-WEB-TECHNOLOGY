@@ -13,9 +13,6 @@ exports.UpdateUserDto = exports.CreateUserDto = void 0;
 const class_validator_1 = require("class-validator");
 class CreateUserDto {
     constructor() {
-        this.name = "";
-        this.email = "";
-        this.password = "";
         this.created_at = new Date();
         this.updated_at = new Date();
     }
@@ -43,24 +40,21 @@ __decorate([
 ], CreateUserDto.prototype, "updated_at", void 0);
 class UpdateUserDto {
     constructor() {
-        this.name = "";
-        this.email = "";
-        this.password = "";
         this.created_at = new Date();
         this.updated_at = new Date();
     }
 }
 exports.UpdateUserDto = UpdateUserDto;
 __decorate([
-    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "name", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "email", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "password", void 0);
 __decorate([
