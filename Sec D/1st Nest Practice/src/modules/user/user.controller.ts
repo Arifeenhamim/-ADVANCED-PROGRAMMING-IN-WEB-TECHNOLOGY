@@ -10,7 +10,7 @@ import {
 import { UserService } from "./user.service";
 import { CreateUserDto } from "./dto/user.dto";
 
-@Controller("users")
+@Controller("users") // link r end point local host 5000/
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

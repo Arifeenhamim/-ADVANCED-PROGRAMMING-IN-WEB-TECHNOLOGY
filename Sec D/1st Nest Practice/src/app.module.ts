@@ -22,6 +22,7 @@ import { UserModule } from "./modules/user/user.module";
       load: [global_config],
     }),
     UserModule,
+    // mew module will come here 
   ],
   controllers: [AppController],
   providers: [AppService],
