@@ -1,38 +1,41 @@
-import { IsNotEmpty , IsOptional, IsAlphanumeric, Matches } from "class-validator";
+import { isNotEmpty, IsNotEmpty, IsOptional, Matches } from "class-validator";
 
 export class CreateTestDto{
-    @IsNotEmpty({message:"Name is a mandatory Field"})
-    name!: string;
-
+    @IsNotEmpty({message:'Name is a mandatory Field'})
+    name!:string;
     @IsNotEmpty()
-    email!: string; 
+    email!:string;
 
-    @IsNotEmpty()
-    @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, {
-        message: 'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
-    })
-    password!: string;
+     @IsNotEmpty()
+     @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,{message:'Password must be match with the format'})
+     password!:string;
 
     @IsOptional()
-    created_at?: Date = new Date();
-    
+    create_at?:Date=new Date();
+
     @IsOptional()
-    updated_at?: Date = new Date();
+    updated_at?:Date= new Date();
+
+
 }
 
 export class UpdateTestDto{
+    @IsNotEmpty({message:'Name is a mandatory Field'})
+    name!:string;
     @IsNotEmpty()
-    name!: string;
+    email!:string;
 
-    @IsNotEmpty()
-    email!: string; 
-
-    @IsNotEmpty()
-    password!: string;
+     @IsNotEmpty()
+     //@Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,{message:'Password must be match with the format'})
+     password!:string;
 
     @IsOptional()
-    created_at?: Date = new Date();
-    
+    create_at?:Date=new Date();
+
     @IsOptional()
-    updated_at?: Date = new Date();
+    updated_at?:Date= new Date();
+
+
 }
+
+
