@@ -15,6 +15,7 @@ export const envSchema = z
     REQ_LOG: z.coerce.boolean().default(true),
     LOG_FILE: z.coerce.boolean().default(true),
     JWT_BEARER_SECRET: z.string(),
+     JWT_REFRESH_SECRET: z.string(),
     AUTH_SERVER_AUDIENCE: z.string().optional(),
     JWT_TTL: z.coerce.number().default(86400 * 365),
     PORT: z.coerce.number().default(5000),
