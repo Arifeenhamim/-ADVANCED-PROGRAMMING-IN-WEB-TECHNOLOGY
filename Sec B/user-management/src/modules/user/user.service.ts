@@ -71,4 +71,15 @@ async deleteUser(id: string){
         throw error;
     }
 }
+
+async findOneByEmail(email: string): Promise<User | null> {
+    try{
+        const user = await this.userRepository.findOne({
+            where: {
+                email: email,}});
+        return user;
+    }catch (error){
+        throw error;
+    }
+}
 }
