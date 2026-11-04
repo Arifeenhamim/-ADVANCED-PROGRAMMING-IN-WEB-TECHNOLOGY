@@ -43,12 +43,12 @@ export class AuthService {
 
 
  
-  /**
-   * sign tokens for user
-   * @date 2022-07-27
-   * @param {any} user:User
-   * @returns {Promise<object>}
-   */
+  // /**
+  //  * sign tokens for user
+  //  * @date 2022-07-27
+  //  * @param {any} user:User
+  //  * @returns {Promise<object>}
+  //  */
   async signTokens(user: User): Promise<{
     access_token: string;
     refresh_token: string;
@@ -88,12 +88,12 @@ export class AuthService {
     };
   }
  
-  /**
-   * get user by email if exists
-   * @date 2022-07-19
-   * @param {string} email:string
-   * @returns {User}
-   */
+  // /**
+  //  * get user by email if exists
+  //  * @date 2022-07-19
+  //  * @param {string} email:string
+  //  * @returns {User}
+  //  */
   async checkUserByEmail(email: string) {
     try {
       const user = await this.userService.findOneByEmail(email);
@@ -105,33 +105,21 @@ export class AuthService {
     // find the user by email
   }
  
-  /**
-   * get user by email if exists
-   * @date 2022-07-19
-   * @param {string} email:string
-   * @returns {User}
-   */
-//   async getActiveUserByEmail(email: string) {
-//     const user = await this.userService.findActiveOneByEmail(email);
-//     console.log({ user });
-//     if (user && user?.is_active === false)
-//       throw new UnauthorizedException("User is not active");
-//     else if (user && user?.is_verified === false)
-//       throw new UnauthorizedException("User is not verified");
-//     // if user does not exist throw exception
-//     console.log({ user });
-//     return user;
+  // /**
+  //  * get user by email if exists
+  //  * @date 2022-07-19
+  //  * @param {string} email:string
+  //  * @returns {User}
+  //  */
+
  
-//     // find the user by email
-//   }
- 
-  /**
-   * validate user against password
-   * @date 2022-07-19
-   * @param {any} user:UserDto
-   * @param {any} password:string
-   * @returns {boolean}
-   */
+  // /**
+  //  * validate user against password
+  //  * @date 2022-07-19
+  //  * @param {any} user:UserDto
+  //  * @param {any} password:string
+  //  * @returns {boolean}
+  //  */
   async validateUser(user: AuthDto, password: string) {
     // compare password
     // const passwordMatches = await argon.verify(user.password, password);
