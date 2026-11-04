@@ -3,13 +3,14 @@ import { UserService } from "../user/user.service";
 import { AuthDto } from "./DTO/auth.dto";
 import { User } from "../user/entities/user.entity";
 import { appConfig } from "@/src/config/app.config";
-import { email } from "zod";
+import { JwtService } from "@nestjs/jwt";
+
 
 @Injectable()
 export class AuthService {
     constructor( 
-        private userService: UserService;
-        private jwt: JwtService;
+        private userService: UserService,
+        private jwt: JwtService,
     ){}
 
     async signIn(dto:AuthDto){
@@ -30,7 +31,7 @@ async signTokens(user:User):Promise<{
     expires_in:number;
     permissions?:any;}>{
         const expires_in=Date.now()+1000*60*60*24*7; // 30 din 
-        const accessPayload={
+const accessPayload={
             user_id:user.id,
             name:user?.name,
             email:user?.email,}
